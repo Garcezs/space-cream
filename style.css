@@ -1,0 +1,324 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-heading: 'Staatliches', sans-serif;
+    --ff-texting: 'Palanquin', sans-serif;
+    --fc-header: #FFFFFF;
+    --fc-maintext: hsl(274, 84%, 12%);
+    --fc-imgicon: #4A4E69;
+    --bg-head:  #8E9AAF;
+    --bg-main: #EFF1FF;
+    --bg-titlebackground:#CBC0D3;
+    --bg-h1:hsl(275, 18%, 79%);
+    --bg-h2: hsl(312, 91%, 96%);
+    --fc-h2:hsl(232, 17%, 35%);
+    
+    --fs-body: 1.6rem;
+    font-size: 62.5%;
+}
+
+.page {
+    max-width: 38.4rem;
+    margin: 0 auto;
+    display: grid;
+  }
+
+body {
+    font-family: var(--ff-texting);
+    font-size: var(--fs-body);
+    text-align: center;
+
+    background-color: var(--bg-main);
+
+    min-width: 38.4rem;
+}
+
+header {
+    max-width: 38.4rem;
+    text-align: center;
+    background-color: var(--bg-head);
+}
+
+header img {
+    padding-top: 3.2rem;
+}
+
+.page header h1 {
+    font-family: var(--ff-heading);
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 4.4rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2.9rem;
+
+
+    margin-top: 3.2rem;
+    padding: 2.2rem;
+
+    background-color: var(--bg-titlebackground);
+    
+    color: var(--fc-header);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+    padding-bottom: 6rem;
+    margin: 0 auto;
+}
+
+.page header p {
+    font-family: var(--ff-texting);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    min-width: 30.5rem;
+
+    padding: 1.4rem 3.2rem 6.2rem;
+
+    color: var(--fc-maintext);
+    background-color: var(--bg-main);
+
+    max-width: 38.4rem;
+}
+
+.desktop {
+    display: none;
+}
+
+
+.card {
+    position: relative;  
+    border-radius: 2rem;
+}
+
+.mobile {
+    display: grid;
+    gap: 3.2rem;
+}
+
+.card img {
+    animation: downtop 700ms 350ms forwards;
+        
+    height: auto;
+}
+
+.card h2 {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3.4rem;
+
+    background: var(--bg-h2);
+    border-radius: 2rem;
+    padding: 0 2.3rem 0;
+
+    animation: topdown 700ms 350ms backwards;
+
+}
+
+footer {
+    display: none;
+}
+
+
+  
+  
+@media (min-width: 900px) {
+.page {
+    max-width: 100%;
+    display: flex;
+    position: relative;
+}
+    
+body {
+    background: #FFFFFF;  
+}
+    
+header {
+    min-height: 100vh;
+}
+    
+main {
+    padding-bottom: 0;
+}
+    
+header h1 {
+    padding: 2rem 6.6rem;
+}
+  
+.page header p {
+     background-color: var(--bg-head);
+      color: var(--fc-header);
+}
+    
+.mobile {
+    display: none;
+}
+    
+  .card img {
+  width: 22.2rem;
+}
+    
+.desktop {
+  padding: 5rem 2rem 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas: 
+  "A B"
+  "D B"
+  "D E"
+  "C F"
+  "C F";
+}
+      
+main div:nth-child(1) {
+  grid-area: A;
+}
+      
+main div:nth-child(2) {
+  grid-area: B;
+}
+      
+main div:nth-child(3) {
+  grid-area: C;
+}
+      
+main div:nth-child(4) {
+  grid-area: D;
+}
+      
+main div:nth-child(5) {
+  grid-area: E;
+}
+      
+main div:nth-child(6) {
+  grid-area: F;
+}
+    
+footer {
+  display: block;
+  font-family: var(--font-footer);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  color: hsl(232, 17%, 35%);
+  text-align: center;
+  margin-top: 5rem;
+}
+    
+.footer a {
+  text-decoration: none;
+  font-weight: 700;
+  color: hsl(232, 17%, 35%);
+}
+      
+}
+
+@media (min-width: 1025px) {
+    
+   
+  .page {
+      margin: 0 auto;
+      max-width: 120rem;
+  }
+
+  header {
+    min-height: 100vh;
+  }
+  
+  .mobile {
+      display: none;
+  }
+  
+  .desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      gap: 2rem;
+
+      grid-template-areas: 
+      "A B C"
+      "D B F"
+      "D E F";
+  }
+  
+  
+  header {
+    width: 72rem;
+    
+    color: white;
+}
+   
+}
+    
+@media (min-width: 1450px) {
+  
+  :root {
+    --fs-header: 4.8rem;
+  }
+
+  .page {
+    max-width: 150rem;
+  }
+  
+  .card img {
+    width: 100%;
+  }
+
+  header {
+    min-height: 0vh;
+  }
+
+  .desktop {
+    padding: 5rem 2rem 0;
+    display: grid;
+    gap: 3.2rem;
+    grid-template-areas: 
+    "A B C"
+    "D B F"
+    "D E F";
+  }
+
+  footer {
+    display: block;
+  }
+
+}
+
+
+
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+  
